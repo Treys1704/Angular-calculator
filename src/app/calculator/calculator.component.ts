@@ -31,20 +31,22 @@ export class CalculatorComponent implements OnInit {
 
   getDecimal(){
     if(!this.currentNumber.includes('.')){
-        this.currentNumber += '.'; 
+        this.currentNumber += '.';
     }
   }
 
   private doCalculation(op , secondOp){
     switch (op){
       case '+':
-      return this.firstOperand += secondOp; 
-      case '-': 
-      return this.firstOperand -= secondOp; 
-      case '*': 
-      return this.firstOperand *= secondOp; 
-      case '/': 
-      return this.firstOperand /= secondOp; 
+      return this.firstOperand += secondOp;
+      case '-':
+      return this.firstOperand -= secondOp;
+      case '*':
+      return this.firstOperand *= secondOp;
+      case '/':
+      return this.firstOperand /= secondOp;
+      case 'mod':
+      return this.firstOperand = this.firstOperand % secondOp;
       case '=':
       return secondOp;
     }
@@ -64,7 +66,7 @@ export class CalculatorComponent implements OnInit {
     this.waitForSecondNumber = true;
 
     console.log(this.firstOperand);
- 
+
   }
 
   public clear(){
